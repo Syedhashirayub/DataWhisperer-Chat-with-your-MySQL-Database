@@ -1,59 +1,34 @@
-DataWhisperer: Chat with your MySQL Database
-This Streamlit application allows you to interact with your MySQL database using natural language! Ask questions about your data and get clear explanations alongside the corresponding SQL queries.
+# DataWhisperer: Chat with your MySQL Database
 
-Features
+DataWhisperer is an innovative Streamlit application designed to bridge the gap between complex SQL queries and users at all levels of SQL proficiency. By enabling both natural language and direct SQL queries, DataWhisperer makes database insights accessible and interactive.
 
-Natural Language Interface: Interact with your database using plain English questions.
-AI-Powered Query Generation: Leverage large language models to generate SQL queries based on your questions.
-Natural Language Response: Receive explanations of the data retrieved from the database in an easy-to-understand format.
-Streamlit Integration: Enjoy a user-friendly interface for seamless interaction with your data.
-Getting Started
+## Features
 
-Prerequisites:
-Python 3.6 or later
-Streamlit
-LangChain libraries (langchain-core, langchain-openai, langchain-community)
-A MySQL database
-Clone the repository:
-Bash
-git clone https://github.com/your-username/datawhisperer.git
-Use code with caution.
-Install dependencies:
-Bash
-pip install -r requirements.txt
-Use code with caution.
-Create a .env file:
+- **Natural Language Interface**: Ask questions in plain English to retrieve data from your MySQL database.
+- **AI-Powered Query Generation:**: Leverage large language models to generate SQL queries based on your questions.
+- **Natural Language Response**: Receive explanations of the data retrieved from the database in an easy-to-understand format..
+- **Customizable Database Connections**: Easily configure the application to connect to different MySQL databases.
+- **User-Friendly Documentation**: Get started quickly with comprehensive documentation and examples.
 
-Create a file named .env in the project root directory. Add your database connection details to this file following the format:
+## Installation
 
-HOST=your_database_host
-PORT=your_database_port
-USER=your_database_username
-PASSWORD=your_database_password
-DATABASE=your_database_name
-Run the application:
+Ensure Python and pip are installed on your machine. Follow these steps to set up DataWhisperer:
 
-Bash
-streamlit run app.py
-Use code with caution.
-How to Use
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Syedhashirayub/DataWhisperer.git
+   cd DataWhisperer
 
-Open http://localhost:8501/ in your web browser (Streamlit default port).
-Connect to your database by entering the details in the sidebar and clicking the "Connect" button.
-Type your questions in the chat input box at the bottom and press Enter.
-The application will generate the corresponding SQL query, execute it on your database, and provide a natural language explanation of the results.
-Example Questions
+2. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
 
-How many orders were placed in January?
-Show me the top 5 products by units sold.
-List all transactions above $500.
-Which product category is the most profitable?
-Compare this month's revenue to the same month last year.
-Further Enhancements
+3. **Create a .env file**:
+   Create a file named .env in the project root directory. Add your Open AI key details to this file following the format
+   ```bash
+   OPENAI_API_KEY= sk-
 
-This code provides a solid foundation for a user-friendly database exploration tool. Consider exploring features like:
+4. **Run the application**:
+   ```bash
+   streamlit run app.py
 
-Customizable dashboards
-Interactive data visualizations
-Scheduled queries and data alerts
-Data export options

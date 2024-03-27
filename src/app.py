@@ -109,37 +109,7 @@ def get_response(user_query: str, db: SQLDatabase, chat_history: list):
   else:
       # The generated SQL query is not valid; return a meaningful message
       return "I'm sorry, I couldn't generate a valid answer based on your question. Could you please rephrase it or ask another question?"
-  '''
-  template = """
-    You are a data analyst at a company. You are interacting with a user who is asking you questions about the company's database.
-    Based on the table schema below, question, sql query, and sql response, write a natural language response.
-    <SCHEMA>{schema}</SCHEMA>
-
-    Conversation History: {chat_history}
-    SQL Query: <SQL>{query}</SQL>
-    User question: {question}
-    SQL Response: {response}"""
-  
-  prompt = ChatPromptTemplate.from_template(template)
-  
-  llm = ChatOpenAI(model="gpt-3.5-turbo")
-  #llm = ChatGroq(model="mixtral-8x7b-32768", temperature=0)
-  
-  chain = (
-    RunnablePassthrough.assign(query=sql_chain).assign(
-      schema=lambda _: db.get_table_info(),
-      response=lambda vars: db.run(vars["query"]),
-    )
-    | prompt
-    | llm
-    | StrOutputParser()
-  )
-  
-  return chain.invoke({
-    "question": user_query,
-    "chat_history": chat_history,
-  })
-'''
+ 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
         AIMessage(content="Hello! I'm a SQL assistant. Ask me anything about your database."),

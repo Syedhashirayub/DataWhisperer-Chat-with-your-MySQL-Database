@@ -1,0 +1,14 @@
+# Core libraries
+streamlit==1.32.0
+langchain-core==0.1.33
+langchain-openai==0.0.7
+langchain-community==0.0.29
+
+# Database connector
+mysql-connector-python==8.1.0
+
+# Error handling
+sqlalchemy==2.0.28
+
+# Optional LLM 
+#langchain-groq   If you want to use ChatGroq as an option
